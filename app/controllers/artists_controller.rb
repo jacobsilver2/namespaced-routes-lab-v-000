@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   def index
+    if 
     @artists = Artist.all
     
   end
