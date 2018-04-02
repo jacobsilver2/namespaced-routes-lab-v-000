@@ -1,6 +1,9 @@
 class ArtistsController < ApplicationController
+  before_action :set_prefs, only:[:index, :new] 
+
   def index
-    if 
+    if @preference 
+      
     @artists = Artist.all
     
   end
@@ -50,5 +53,9 @@ class ArtistsController < ApplicationController
 
   def artist_params
     params.require(:artist).permit(:name)
+  end
+
+  def set_prefs
+    @preference = Preference.first
   end
 end
